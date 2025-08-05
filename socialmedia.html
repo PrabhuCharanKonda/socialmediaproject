@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Social Feed</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e7e9ed; 
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md py-4 px-6 md:px-8 lg:px-12 flex items-center justify-between sticky top-0 z-10">
+        <h1 class="text-2xl font-bold text-gray-800">MySocialMedia</h1>
+        <div class="flex items-center space-x-4">
+            <input type="text" placeholder="Search..." class="hidden md:block px-4 py-2 rounded-full bg-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                Create Post
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow container mx-auto p-4 md:p-6 lg:p-8 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-6">
+
+        <!-- Left Sidebar (User Profile/Navigation) -->
+        <aside class="hidden md:block md:col-span-1 bg-white p-6 rounded-lg shadow-md h-fit sticky top-24">
+            <div class="flex items-center space-x-4 mb-6">
+                <img src="/IMG_20241107_052325-01.jpeg.jpg" alt="User Avatar" class="w-16 h-16 rounded-full border-2 border-blue-500">
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-800">prabhu charan</h2>
+                    <p class="text-gray-500 text-sm">@prabhu</p>
+                </div>
+            </div>
+            <nav>
+                <ul class="space-y-3">
+                    <li><a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 p-2 rounded-md transition duration-200">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-9v9a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                        <span>Home</span>
+                    </a></li>
+                    <li><a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 p-2 rounded-md transition duration-200">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2v-2a3 3 0 015.356-1.857M17 20v-2c0-.134-.01-.265-.029-.395M12 18.5V21m-1.447-2.924a1 1 0 01-1.447 0L7 16.5m5-11.5a4 4 0 110 8 4 4 0 010-8zM12 12a4 4 0 100-8 4 4 0 000 8z"></path></svg>
+                        <span>Profile</span>
+                    </a></li>
+                    <li><a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 p-2 rounded-md transition duration-200">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                        <span>Messages</span>
+                    </a></li>
+                    <li><a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 p-2 rounded-md transition duration-200">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                        <span>Notifications</span>
+                    </a></li>
+                    <li><a href="#" class="flex items-center space-x-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 p-2 rounded-md transition duration-200">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <span>Settings</span>
+                    </a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Feed Area -->
+        <section class="col-span-1 md:col-span-3 lg:col-span-3 space-y-6">
+
+            <!-- Create New Post Section -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center space-x-4 mb-4">
+                    <img src="https://placehold.co/50x50/a0aec0/ffffff?text=U" alt="User Avatar" class="w-12 h-12 rounded-full">
+                    <textarea id="postContent" placeholder="What's on your mind, prabhu?" class="flex-grow p-3 rounded-lg bg-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" rows="3"></textarea>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                    <input type="file" id="postImage" accept="image/*" class="hidden">
+                    <label for="postImage" class="cursor-pointer bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-full transition duration-300 ease-in-out">
+                        <svg class="w-5 h-5 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        Add Photo
+                    </label>
+                    <button id="postButton" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                        Post
+                    </button>
+                </div>
+            </div>
+
+            <!-- Posts Feed -->
+            <div id="postsContainer" class="space-y-6">
+                <!-- Example Post 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="/v2osk-JE01L3hB0GQ-unsplash.jpg" alt="Avatar" class="w-12 h-12 rounded-full">
+                        <div>
+                            <p class="font-semibold text-gray-800">Harsha</p>
+                            <p class="text-gray-500 text-sm">@Harshaspics &bull; 2 hours ago</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">Enjoying a beautiful sunset today! Nature's beauty never ceases to amaze me. #sunset #nature #beautiful</p>
+                    <img src="/v2osk-JE01L3hB0GQ-unsplash.jpg" alt="Post Image" class="w-full h-auto rounded-lg mb-4 object-cover">
+                    <div class="flex items-center justify-between text-gray-600 text-sm">
+                        <div class="flex items-center space-x-4">
+                            <button class="flex items-center space-x-1 hover:text-blue-500 transition duration-200 like-button" data-likes="15">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                                <span class="likes-count">15</span> Likes
+                            </button>
+                            <button class="flex items-center space-x-1 hover:text-blue-500 transition duration-200">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                                <span>3 Comments</span>
+                            </button>
+                        </div>
+                        <button class="flex items-center space-x-1 hover:text-blue-500 transition duration-200">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.865 13.103 9 12.785 9 12.5V11a9.02 9.02 0 00-2-5.98V7.5M21 12.5c0 .285-.135.503-.316.664L12 21.118V12.5h8.5zM21 12.5c0-.285-.135-.503-.316-.664L12 3.882V12.5h8.5zM12 12.5c0 .285-.135.503-.316.664L3 21.118V12.5h8.5zM12 12.5c0-.285-.135-.503-.316-.664L3 3.882V12.5h8.5z"></path></svg>
+                            <span>Share</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Example Post 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="/4343789.jpg" alt="Avatar" class="w-12 h-12 rounded-full">
+                        <div>
+                            <p class="font-semibold text-gray-800">Nithya</p>
+                            <p class="text-gray-500 text-sm">@Nithya's &bull; 5 hours ago</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">Just finished a great coding session! Feeling productive. #coding #developer #webdev</p>
+                    <div class="flex items-center justify-between text-gray-600 text-sm">
+                        <div class="flex items-center space-x-4">
+                            <button class="flex items-center space-x-1 hover:text-blue-500 transition duration-200 like-button" data-likes="28">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                                <span class="likes-count">28</span> Likes
+                            </button>
+                            <button class="flex items-center space-x-1 hover:text-blue-500 transition duration-200">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                                <span>7 Comments</span>
+                            </button>
+                        </div>
+                        <button class="flex items-center space-x-1 hover:text-blue-500 transition duration-200">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.865 13.103 9 12.785 9 12.5V11a9.02 9.02 0 00-2-5.98V7.5M21 12.5c0 .285-.135.503-.316.664L12 21.118V12.5h8.5zM21 12.5c0-.285-.135-.503-.316-.664L12 3.882V12.5h8.5zM12 12.5c0 .285-.135.503-.316.664L3 21.118V12.5h8.5zM12 12.5c0-.285-.135-.503-.316-.664L3 3.882V12.5h8.5z"></path></svg>
+                            <span>Share</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Right Sidebar (Suggestions/Trends) -->
+        <aside class="hidden lg:block lg:col-span-1 bg-white p-6 rounded-lg shadow-md h-fit sticky top-24">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">Who to Follow</h3>
+            <ul class="space-y-4">
+                <li class="flex items-center space-x-3">
+                    <img src="/madonna-sebastian.png" alt="User Avatar" class="w-10 h-10 rounded-full">
+                    <div>
+                        <p class="font-semibold text-gray-800">Madonna</p>
+                        <p class="text-gray-500 text-sm">@Madonna.S</p>
+                    </div>
+                    <button class="ml-auto bg-blue-100 text-blue-600 hover:bg-blue-200 text-sm font-medium py-1 px-3 rounded-full transition duration-200">Follow</button>
+                </li>
+                <li class="flex items-center space-x-3">
+                    <img src="https://placehold.co/40x40/a78bfa/ffffff?text=D" alt="User Avatar" class="w-10 h-10 rounded-full">
+                    <div>
+                        <p class="font-semibold text-gray-800">Emma Watson</p>
+                        <p class="text-gray-500 text-sm">@Emma's posts</p>
+                    </div>
+                    <button class="ml-auto bg-blue-100 text-blue-600 hover:bg-blue-200 text-sm font-medium py-1 px-3 rounded-full transition duration-200">Follow</button>
+                </li>
+            </ul>
+
+            <h3 class="text-lg font-semibold text-gray-800 mt-8 mb-4">Trends for you</h3>
+            <ul class="space-y-2">
+                <li><a href="#" class="text-blue-600 hover:underline">#WebDevelopment</a> <span class="text-gray-500 text-sm">12.5K posts</span></li>
+                <li><a href="#" class="text-blue-600 hover:underline">#AIInnovation</a> <span class="text-gray-500 text-sm">8.9K posts</span></li>
+                <li><a href="#" class="text-blue-600 hover:underline">#TravelGoals</a> <span class="text-gray-500 text-sm">7.2K posts</span></li>
+            </ul>
+        </aside>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const postButton = document.getElementById('postButton');
+            const postContent = document.getElementById('postContent');
+            const postImageInput = document.getElementById('postImage');
+            const postsContainer = document.getElementById('postsContainer');
+
+            // Function to format date/time
+            function formatTimeAgo(date) {
+                const now = new Date();
+                const seconds = Math.round((now - date) / 1000);
+                const minutes = Math.round(seconds / 60);
+                const hours = Math.round(minutes / 60);
+                const days = Math.round(hours / 24);
+
+                if (seconds < 60) return `${seconds} seconds ago`;
+                if (minutes < 60) return `${minutes} minutes ago`;
+                if (hours < 24) return `${hours} hours ago`;
+                return `${days} days ago`;
+            }
+
+            // Function to create a new post element
+            function createPostElement(content, imageUrl = null) {
+                const postDiv = document.createElement('div');
+                postDiv.className = 'bg-white p-6 rounded-lg shadow-md';
+
+                const userName = "prabhucharan"; // Current user
+                const userHandle = "@prabhu";
+                const userAvatar = "/IMG_20241107_052325-01.jpeg.jpg"; 
+                const postTime = formatTimeAgo(new Date());
+
+                let imageHtml = '';
+                if (imageUrl) {
+                    imageHtml = `<img src="${imageUrl}" alt="Post Image" class="w-full h-auto rounded-lg mb-4 object-cover">`;
+                }
+
+                postDiv.innerHTML = `
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="${userAvatar}" alt="Avatar" class="w-12 h-12 rounded-full">
+                        <div>
+                            <p class="font-semibold text-gray-800">${userName}</p>
+                            <p class="text-gray-500 text-sm">${userHandle} &bull; ${postTime}</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">${content}</p>
+                    ${imageHtml}
+                    <div class="flex items-center justify-between text-gray-600 text-sm">
+                        <div class="flex items-center space-x-4">
+                            <button class="flex items-center space-x-1 hover:text-blue-500 transition duration-200 like-button" data-likes="0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                                <span class="likes-count">0</span> Likes
+                            </button>
+                            <button class="flex items-center space-x-1 hover:text-blue-500 transition duration-200">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                                <span>0 Comments</span>
+                            </button>
+                        </div>
+                        <button class="flex items-center space-x-1 hover:text-blue-500 transition duration-200">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.865 13.103 9 12.785 9 12.5V11a9.02 9.02 0 00-2-5.98V7.5M21 12.5c0 .285-.135.503-.316.664L12 21.118V12.5h8.5zM21 12.5c0-.285-.135-.503-.316-.664L12 3.882V12.5h8.5zM12 12.5c0 .285-.135.503-.316.664L3 21.118V12.5h8.5zM12 12.5c0-.285-.135-.503-.316-.664L3 3.882V12.5h8.5z"></path></svg>
+                            <span>Share</span>
+                        </button>
+                    </div>
+                `;
+                // Add event listener for the like button on the new post
+                postDiv.querySelector('.like-button').addEventListener('click', handleLike);
+                return postDiv;
+            }
+
+            // Handle post creation
+            postButton.addEventListener('click', () => {
+                const content = postContent.value.trim();
+                const imageFile = postImageInput.files[0];
+                let imageUrl = null;
+
+                if (content === '' && !imageFile) {
+                    // In a real app, you'd show a custom modal/message box here
+                    console.log("Please enter some content or select an image to post.");
+                    return;
+                }
+
+                if (imageFile) {
+                    // For demonstration, use FileReader to display local image
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        imageUrl = e.target.result;
+                        const newPost = createPostElement(content, imageUrl);
+                        postsContainer.prepend(newPost); // Add new post to the top
+                        postContent.value = ''; // Clear textarea
+                        postImageInput.value = ''; // Clear file input
+                    };
+                    reader.readAsDataURL(imageFile);
+                } else {
+                    const newPost = createPostElement(content);
+                    postsContainer.prepend(newPost); // Add new post to the top
+                    postContent.value = ''; // Clear textarea
+                }
+            });
+
+            // Handle like button clicks
+            function handleLike(event) {
+                const button = event.currentTarget;
+                let likes = parseInt(button.dataset.likes);
+                const likesCountSpan = button.querySelector('.likes-count');
+
+                if (button.classList.contains('text-blue-500')) {
+                    // Already liked, unlike it
+                    likes--;
+                    button.classList.remove('text-blue-500');
+                    button.classList.remove('font-bold');
+                } else {
+                    // Not liked, like it
+                    likes++;
+                    button.classList.add('text-blue-500');
+                    button.classList.add('font-bold');
+                }
+                button.dataset.likes = likes;
+                likesCountSpan.textContent = likes;
+            }
+
+            // Attach event listeners to existing like buttons
+            document.querySelectorAll('.like-button').forEach(button => {
+                button.addEventListener('click', handleLike);
+            });
+        });
+    </script>
+</body>
+</html>
